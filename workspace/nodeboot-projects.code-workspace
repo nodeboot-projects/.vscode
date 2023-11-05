@@ -168,7 +168,7 @@
       "editor.formatOnType": true,
       "editor.rulers": [80],
       "editor.trimAutoWhitespace": true,
-      "editor.wordWrap": "on",
+      "editor.wordWrap": "wordWrapColumn",
       "editor.wordWrapColumn": 80,
       "files.insertFinalNewline": true,
       "files.trimFinalNewlines": true,
@@ -265,7 +265,6 @@
     "css.lint.vendorPrefix": "error",
     "css.lint.zeroUnits": "error",
     "css.validate": true,
-    // Editor
     "editor.autoClosingBrackets": "languageDefined",
     "editor.autoClosingDelete": "auto",
     "editor.autoClosingOvertype": "auto",
@@ -313,6 +312,8 @@
     "editor.lightbulb.enabled": true,
     "editor.lineHeight": 0,
     "editor.lineNumbers": "on",
+    // Editor
+    "editor.linkedEditing": true,
     "editor.minimap.enabled": false,
     "editor.parameterHints.cycle": true,
     "editor.parameterHints.enabled": true,
@@ -382,6 +383,7 @@
     "editor.wrappingIndent": "same",
     "editor.wrappingStrategy": "simple",
     // Emmet
+    "emmet.excludeLanguages": [],
     "emmet.includeLanguages": {
       "javascript": "javascriptreact",
       "markdown": "html",
@@ -444,6 +446,13 @@
     "explorer.sortOrder": "default",
     "explorer.sortOrderLexicographicOptions": "unicode",
     // ___EXCLUDES___
+    "files.associations": {
+      "CHANGELOG": "markdown",
+      "CODE_OF_CONDUCT": "markdown",
+      "LICENSE": "markdown",
+      "README": "markdown",
+      "SECURITY": "markdown"
+    },
     "files.exclude": {
       "**/.git": true
     },
@@ -568,6 +577,8 @@
     "json.format.enable": true,
     "json.format.keepLines": true,
     // Markdown
+    "markdown.validate.enabled": true,
+    // MarkdownLint
     "markdownlint.config": {
       "MD004": {
         "style": "dash"
@@ -597,7 +608,25 @@
       "MD046": true,
       "default": true
     },
-    "markdownlint.ignore": ["**/LICENSE/**"],
+    "markdownlint.lintWorkspaceGlobs": [
+      "!**/.git",
+      "!**/LICENSE.md/**",
+      "!**/LICENSE/**",
+      "!**/bower_components",
+      "!**/node_modules",
+      "!**/vendor",
+      "**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}",
+      "**/CHANGELOG.md/**",
+      "**/CHANGELOG/**",
+      "**/CODE_OF_CONDUCT.md/**",
+      "**/CODE_OF_CONDUCT/**",
+      "**/CONTRIBUTING.md/**",
+      "**/CONTRIBUTING/**",
+      "**/README.md/**",
+      "**/README/**",
+      "**/SECURITY.md/**",
+      "**/SECURITY/**"
+    ],
     // NPM
     "npm-intellisense.importDeclarationType": "const",
     "npm-intellisense.importES6": true,
@@ -626,7 +655,6 @@
     "outline.problems.badges": true,
     "outline.problems.colors": true,
     "outline.problems.enabled": true,
-    // New settings
     "output.smartScroll.enabled": true,
     // Path intellisense
     "path-intellisense.absolutePathToWorkspace": true,
